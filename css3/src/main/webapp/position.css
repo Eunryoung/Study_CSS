@@ -1,0 +1,247 @@
+@charset "UTF-8";
+
+html {
+	scroll-behavior: smooth;
+	/* 부드러운 스크롤 이동 */
+}
+
+section>div {
+	border: 1px solid;
+}
+
+section>h2>i {
+	font-size: 16px;
+	font-style: normal;
+	color: #830;
+}
+/* 1. position: static; (기본) 위치 변경 불가 */
+#sec01>div {
+	position: static; 
+	left: 1000px;
+}
+
+/* 2. position: relative; 현재 위치를 기준으로 이동 */
+#sec02>div {
+	width: 200px;
+}
+
+.re01 {
+	position: relative;
+	left: 1000px;
+	/* 출발점이 왼쪽이라서 left 값 지정 */
+}
+
+.re02 {
+	position: relative;
+	right: 1000px;
+	/* 뒤에서 앞으로 이동시키기 위해 출발점 right 값 지정 */
+}
+
+.re03 {
+	position: relative;
+	top: 250px;
+	/* 위에서 아래로 이동시키기 위해 출발점 top 값 지정 */
+}
+
+.re04 {
+	position: relative;
+	bottom: 250px;
+	/* 아래에서 위로 이동시키기 위해 출발점 bottom 값 지정 */
+}
+
+.re05 {
+	position: relative;
+	left: 30em;
+	bottom: 5em;
+	/* 좌측 하단에서 출발해 우측 상단으로 이동시킴 */
+}
+
+.re06 {
+	position: relative;
+	left: 40em;
+	top: 5em;
+	/* 좌측 상단에서 출발해 우측 하단으로 이동시킴 */
+}
+
+#sec02:hover>div {
+	position: static;
+}
+
+/* 3. position: absolute; 상위요소를 기준으로 이동 */
+/* 현재 페이지에서 상위요소는 점선으로 표시된 section 태그영역 */
+/* 상위요소 기준이므로 absolute 값 주기 전에 */ 
+/* 상위요소에 position: relative; 값 설정해야함 */
+#sec03 {
+	position: relative;
+	/* 상위요소 자체는 relative 값 설정해도 달라지는건 없으므로
+	   설정해도 아무런 변화가 생기지 않음 */
+	height: 500px;
+	/* 높이 값을 500px로 고정 */
+}
+
+#sec03>div {
+	width: 200px;
+	height: 30px;
+}
+
+.ab01{
+	position: absolute;
+	left: 1000px;
+	/* 전체화면이 아닌 상위요소 내에서 왼쪽에서 출발해 1000px 만큼 이동 */
+	/* 화면을 가로로 줄였다 늘였다해보면 상위요소 영역내에서 왔다갔다하며
+	   일정한 거리를 유지한다  */
+}
+
+.ab02 {
+	position: absolute;
+	right: 1000px;
+	/* 전체화면이 아닌 상위요소 내에서 오른쪽에서 출발해 1000px 만큼 이동 */
+	/* 화면을 가로로 줄였다 늘였다해보면 상위요소 영역내에서 왔다갔다하며
+	   일정한 거리를 유지한다  */
+}
+
+.ab03 {
+	position: absolute;
+	top: 20px; 
+	/* 상위요소 내에서 위에서 출발해 20px만큼 이동 */
+}
+
+.ab04 {
+	position: absolute;
+	bottom: 100px;
+	/* 상위요소 내에서 아래에서 출발해 100px만큼 이동 */
+}
+
+.ab05 {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	/* 상위요소의 우측하단에 꼭 붙어있도록 설정 */
+}
+
+.ab06 {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+
+#sec03>aside {
+	background-color: #000;
+	width: 800px;
+	height: 400px;
+	margin-top: 50px;
+	position: relative;
+	/* 하위요소 card 4개의 position 값 설정을 위해 */
+	/* 상위요소인 aside 태그에 relative 값 지정 */
+	
+}
+
+#sec03>aside>div {
+	border: 1px solid;
+	width: 100px;
+	height: 120px;
+	color: #fff;
+	border-radius: 14px;
+	box-sizing: border-box; /* 테두리 사이즈를 포함한 크기를 영역 전체의 크기로 */ 
+	padding: 6px;
+	position: absolute;
+	text-transform: capitalize;
+}
+
+.cd01 {
+	background-color: #a50;
+	top: 100px;
+	left: 200px;
+	z-index: 50;
+	/* z-index 값이 클수록 위로 올라온다 */
+	/* 기본적으로는 후반에 만들수록 z-index값이 커지도록 자동으로 설정 */
+	/* z-index는 음수값도 가질 수 있다! */
+}
+
+.cd02 {
+	background-color: #0a5;
+	top: 110px;
+	left: 240px;
+	z-index: 49;
+}
+
+.cd03 {
+	background-color: #a05;
+	top: 120px;
+	left: 280px;
+	z-index: 48;
+}
+
+.cd04 {
+	background-color: #05a;
+	top: 130px;
+	left: 320px;
+	z-index: 47;
+}
+
+#sec03>aside:hover>.cd02 {
+	top:100px;
+	left: 300px;
+	/* 1번 카드와 나란히 배치되도록 
+	   cd01과 높이가 같고 left 값은 더한 값으로 */
+	transition: 1s;
+}
+
+#sec03>aside:hover>.cd03 {
+	top:100px;
+	left: 400px;
+	transition: 1s;
+}
+
+#sec03>aside:hover>.cd04 {
+	top:100px;
+	left: 500px;
+	transition: 1s;
+}
+
+#sec03>aside>p {
+	position: relative;
+	left: 300px;
+	top: 250px; 
+}
+
+/* 4. position: fixed; */
+#sec04>nav {
+	border-left: 14px solid #d30; /* 왼쪽에 붉은색 손잡이 역할 띠 넣음 */
+	position: fixed; /* 위치 고정 => 이것만 하면 화면에 안나옴 */
+	right: -130px; /* 오른쪽에서 출발해 음수값을 주면 밀려나서 화면 밖으로 나감*/
+	bottom: 100px; /* 밑바닥에서 출발해 거리 0 */
+	width: 150px;
+	box-sizing: border-box; /* 테두리 사이즈를 포함한 크기를 영역 전체의 크기로 */
+	background-color: #024; /* 배경색 어둡게 지정 */
+}
+
+#sec04>nav:hover {
+	right: 0;
+}
+
+#sec04 ul {
+	list-style: none; /* 리스트 한꺼번에 스타일 없앰 */
+	padding-left: 12px; /* 왼쪽에 안쪽 여백 */
+}
+
+#sec04 ul a:link, #sec04 ul a:visited {
+	text-decoration: none; /* a 링크 밑줄 없앰 */
+	color:#fff;
+}
+
+#sec04 ul a:hover, #sec04 ul a:active {
+	color:#ff0;
+}
+
+/* 5. position: sticky; */
+#sec05 {
+	position: sticky; /* 이것만 적용시 변화 X => 거리값을 줘야함 */
+	top: 0; /* 상단에서 출발해 거리 0 */
+	z-index: 9999; /* 항상 가장 위 레이어에 오도록 */
+	background-color: rgba(255, 255, 255, 0.8); 
+	/* => rgb에 alpha 값이 들어가서 색상의 투명도 지정 */
+	/* => 색상의 불투명도 지정 rgba(n, n, n, n) */
+	/* => a는 0 ~ 1 사이의 값 */
+	/* => 1은 기본값. white나 #ffffff랑 똑같음 */
+}

@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/*
+External CSS : 외부 파일 방식. 스타일 소스를 웹문서와 별개로 만들어 연결하는 형태로 적용 -> 통일된 스타일 가능, 수정/보수 용이
+			   => 외부 파일(= 현재 파일 = basic.css) 내에서 설정 후 기존 파일(= basic.html)의 head 태그 내에서 파일을 연결
+			   => <link href="basic.css" rel="stylesheet"> 태그를 사용! (rel="stylesheet"는 고정값!)			   
+				
+
+*/
+/* id 값이 "ex"인 모든 속성의 배경색 설정 */
+#ex{background-color:#09f;}
+
+/* id 값이 "s-t"인 모든 속성의 배경색 설정 */
+#s-t{background-color:#f73;}
+
+/* id 값이 "s-i"인 모든 속성의 배경색 설정 */
+#s-i{background-color:#3f7;}
+
+/* id 값이 "s-c"인 모든 속성의 배경색 설정 */
+#s-c{background-color:#37f;}

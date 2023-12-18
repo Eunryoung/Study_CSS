@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+#ov>li {
+	border: 4px double #389;
+	width: 300px;
+	height: 300px;
+	/* 가로, 세로 크기 줄여서 영역 크기를 의도적으로 축소 */
+	/* 영역보다 내용이 훨씬 많을 때 내용물이 삐져나옴 */
+}
+
+.ov01, .ov02, .ov03, .ov04 {
+	float: left;
+	/* 나란히 배치 시킴 => 순서 변경되면 안되므로 left */
+	margin-right: 20px;
+}
+
+.ov01 {
+	overflow: visible;
+	/* 기본값이라 굳이 설정할 필요 X */
+}
+
+.ov02 {
+	overflow: hidden;
+}
+
+.ov03 {
+	overflow: scroll;
+}
+
+.ov04 {
+	overflow: auto;
+}
+
+#ov:hover>.ov03, #ov:hover>.ov04 {
+	height: 600px;
+	font-size: 10px;
+	line-height: 1;
+	/* 마우스오버시 영역 크기의 확대로 */
+	/* .ov03은 필요없어도 스크롤바가 보이지만 */
+	/* .ov04는 영역 내에 내용이 다 나올 때는 스크롤바가 생성되지 않는다 */ 
+}
+
+#box {
+	border: 1px sold #089;
+	clear: both; 
+	width: 150px;
+	height: 150px;
+	margin-top: 50em;
+	overflow: hidden;
+}
+
+#box>img{
+	opacity: 0.6; 
+}
+
+#box:hover>img {
+	width: 100%;
+	opacity: 1;
+}
+
+/* 말줄임표 삼총사 */
+#el {
+	background-color: #ccc;
+	padding: 0.5em;
+	width: 150px;
+	height: 20px;
+	white-space: nowrap;
+	/* 영역을 인식하면서 저절로 삐져나간 내용을 자동으로 줄바꿈하지않도록 강제 */
+	overflow: hidden;
+	/* 줄어든 영역에서 삐져나간 부분 숨김처리 */
+	text-overflow: ellipsis;
+	/* 말줄임표 표시 => 필요시에만 나타나고 필요없을 시에는 나오지 않음 */
+}
+
+#el:hover {
+	background-color: #000;
+	color: #fff;
+	transition: 1s;
+	width: 100%;
+	/* 마우스오버 시 영역 크기 늘려서 숨겨진 내용 나타나게 함 */
+}

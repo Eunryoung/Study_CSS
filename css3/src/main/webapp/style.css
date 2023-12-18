@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/* CSS 시간에 사용할 공용 스타일이 명시된 코드를 포함하고있는 CSS 파일 */
+h1{background-color:#acf; border-left:12px solid #8ad; padding:0.3em 0.7em; color:#036;}
+
+section {border: 4px dashed #888; margin: 4em 1em; padding: 1em;}
+
+section>h2 {border-bottom: 2px solid #888; background-color: #cdf; color:#036;}
+

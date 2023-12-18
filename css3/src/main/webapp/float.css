@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+/* ■ 가로형 좌측 배치 메뉴 */
+#flmn01 {
+	list-style: none;
+	/* 목록 앞의 기본 모양 제거 */
+}
+
+#flmn01>li {
+	border:1px solid red;
+	float: left; 
+}
+
+#flmn02>li {
+	border:1px solid #ff0;
+	float: left;
+	/* float: right; 적용 시 나란히 있는 메뉴의 순서가 바뀌므로 */
+	/* 우선은 float: left; 설정 후 상위 요소에 float: right; 적용할 것 */
+}
+
+/* ■ 가로형 우측 배치 메뉴 */
+#flmn02 {
+	border:1px solid #080;
+	list-style: none;
+	/* 목록 앞의 기본 모양 제거 */
+	float: right; /* 우측 배치 메뉴 */
+	/* 상위 요소인 #flmn02에 float: right;를 적용해 */
+	/* 이미 float: left; 설정된 하위 요소 #flmn02>li에도 우측 배치 적용됨 */
+}
+
+#fl {
+	background-color: #f75;
+	float: left;
+}
+
+#fr {
+	background-color: #57f;
+	float: right;
+}
+/* 글자가 짧다면 float 적용 시 크기가 줄어 듦 */
+
+#fl, #fr {
+	padding: 1em;
+	/* padding : 안쪽 여백 설정 */
+	margin-bottom: 2em;
+}
+
+.clear {
+	clear: both;
+	/* float의 영향으로 밀고 올라온 다음 요소를 제자리로 */
+	/* both: left, right 모두 적용 */
+	
+	/* margin-top: 2em; */
+	/* float의 영향으로 위치가 바뀐 요소에 margin 속성을 줘도 적용 X */
+}
+
+
+/* 1. 이미지에 float: left; 적용 */
+#sec01>p>img {
+	float: left;
+	margin-right: 1em;
+}
+
+
+/* id 값이 sec01, 02인 요소에 overflow: hidden; 적용 */
+#sec01 {
+	overflow: hidden;
+	/* float된 하위 요소 영향으로 줄어든 상위 요소의 크기 회복 */
+	float: left;
+	width: 45%;
+}
+
+#sec02 {
+	overflow: hidden;
+	float: right;
+	width: 45%;
+}
+
+
+/* 2. 이미지에 float: right; 적용 */
+#sec02>p>img {
+	float: right;
+	margin-left: 1em;
+}
+
+#sec02>p {
+	text-align: right;
+}
+
+/* 3. p 에 float: ; 적용 */
+#sec03>p {
+	border: 1px solid red;
+}
+
+.p01, .p02, .p03 {
+	float: left;
+	/* float: right; */
+	/* float: right; 적용시 나란히 있는 컨텐츠의 배치가 반대로 바뀐다 */
+	width: 30%;	
+	margin-right: 1.5%;
+}
+
+.p04 {
+	clear: both;
+	/* 밀고올라온 .p04 영역의 float 영향 해제 */
+	/* 혹은 html 파일에서 <p class="p04 clear"> 태그 설정해도 동일 */
+} 
+
+.p05, .p06 {
+	float: left;
+}
+
+.p05 {
+	width: 45%;	
+	margin-right: 2%;
+}
+
+.p06 {
+	width: 47%;
+}
+
+#sec03 {
+	overflow: hidden;
+}
+
+.p07 {
+	background-color: #eee;
+}

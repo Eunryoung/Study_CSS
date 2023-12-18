@@ -1,0 +1,94 @@
+@charset "UTF-8";
+/* 1. padding의 방향별 지정 */
+#sec01>div {
+	border: 1px solid #04d;
+}
+
+.pt {
+	padding-top: 30px;
+	/* margin 과 padding 의 차이 
+	여백이 생기는 건 같지만
+	margin은 영역 넓이의 변경 없이 움직인 것
+	padding은 영역 자체가 넓어진 것 */
+}
+
+.pr {
+	padding-right: 20%;
+	text-align: right;
+}
+
+.pb {
+	padding-bottom: 2em;
+}
+
+.pl {
+	/* text-indent: 10%; */
+	/* 들여쓰기 -> 한 줄에만 적용 */
+	padding-left: 10%;
+	/* 여러 줄 한 번에 들여쓰기 하려면 padding-left 설정하기!*/
+}
+
+/* padding의 값 갯수별 지정 */
+#sec02>div {
+	border: 1px solid #d04;
+}
+
+.pn01 {
+	padding: 50px;
+	/* 양사방 동일하게 50px 적용 */
+	
+}
+
+.pn02 {
+	padding: 50px 20%;
+	/* 상하 50px, 좌우 20% 적용 */
+}
+
+.pn03 {
+	padding: 50px 30% 10px;
+	/* 상 50px, 좌우 30% 하 10px 적용 */
+}
+
+.pn04 {
+	padding: 30px 30% 1em 10%;
+	/* 상 30px, 우 30% 하 1em 좌 10%(시계 방향) 적용 */
+}
+
+#sec03>span, #sec03>label {
+	background-color: #fc5;
+	/* width: 100px;
+	height: 30px; */
+	/* 적용 안 됨 */
+	
+	padding: 7px 40px;
+	/* inline 요소에서 높이, 너비 영역에 변경 적용하려면
+	   width, height는 적용 불가하므로 
+	   padding을 사용해 한 번에 변경 */
+}
+
+.ph01 {
+	border: 20px solid #035;
+	padding: 150px;
+	margin-right: 30px;
+}
+
+.ph02 {
+	border: 1px solid;
+	border-radius: 10px;
+	padding: 20px 20px 200px;
+	box-shadow: 1px 2px 10px #333;
+}
+
+.ph03 {
+	border: 1px solid;
+	border-radius: 50%;
+	margin-left: 50px !important;
+	/* !important 설정 시 최우선순위 적용 */
+}
+
+.ph03:hover {
+	border-radius: 0;
+	transition: 1s;
+	/* 마우스 오버 시 모서리를 서서히 원래 상태로 */
+	
+}

@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+/* ======== 1. margin의 방향별 지정법 ======== */
+#sec01>div {
+	border: 1px solid #040;
+}
+
+.mt {
+	margin-top: 50px;
+}
+
+.mr {
+	margin-right: 50px;
+	text-align: right;
+}
+
+.mb {
+	margin-bottom: 50px;
+}
+
+.ml{
+	margin-left: 50px;
+}
+
+#sec01:hover>div {
+	margin: 0;
+	/* 마우스오버 시 margin 속성이 모두 없어진 상태로 되돌림 */
+	/* div 태그 종류는 기본적으로 margin 값이 없다 */
+}
+
+/* ======== 2. margin의 값 갯수별 지정법 ======== */
+#sec02>div {
+	border: 1px solid #a8a;
+}
+
+.mn01 {
+	margin: 2em;
+	/* 양사방 동일하게 2em 적용 */
+}
+
+.mn02 {
+	margin: 2em 4em;
+	/* 상하 2em, 좌우 4em 적용 */
+}
+
+.mn03 {
+	margin: 2em 4em 1em;
+	/* 상 2em, 좌우 4em 하 1em 적용 */
+}
+/*
+.mn03 에서 아래로 1em
+.mn04 에서 위로 3em
+적용값이 충돌할 경우
+큰 값인 .mn04의 3em 값이 적용된다!
+ 
+*/
+.mn04 {
+	margin: 3em 20% 7em 10%;
+	/* 상 3em, 우 20% 하 7em 좌 10%(시계 방향) 적용 */
+}
+
+.cnt {
+	background-color: #a80;
+	width: 30%;
+	height: 90px;
+	/* margin-left: auto;
+	margin-right: auto; */
+	margin: 2em auto;
+	text-align: center;
+}
+
+#sec03>*:not(h2) {
+	border: 1px solid #8aa;
+	margin: 50px;
+}
+
+label {
+	width: 120px;
+	display: inline-block;
+	margin-bottom: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	color: #333;
+}
+
+input {
+	width: 200px;
+}
+
+#sbm {
+	margin-left: 125px;
+	margin-top: 20px;
+}

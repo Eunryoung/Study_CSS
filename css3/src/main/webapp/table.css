@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+body>div {
+	border: 1px solid red;
+}
+
+#box01, #box02 {
+	display: inline-block;
+	margin-right: 40px;
+}
+
+#box03, #box04 {
+	float: left;
+	margin-left: 40px;
+	margin-top: 50px;
+}
+
+table, th, td {
+	border: 1px solid;
+}
+
+/* 1. stripe table */
+#tab01 {
+	/* 표의 크기 처음부터 지정 */
+	width: 600px;
+	height: 500px;
+}
+
+#tab01 th {
+	background-color: #0a9;
+	/* height: 50px; */ /* 직접 높이값을 주거나 */
+	padding: 12px 10px; /* 위아래, 좌우 안쪽 여백 */
+	color: #fff;
+	text-align: left;
+}
+
+#tab01 tr:nth-of-type(2n-1) { /* 홀, 짝 지정 */
+	/* => nth-of-type() : 순서 선택자 */
+	/* => 2n, even, odd 가능*/
+	background-color: #ccc;
+}
+
+#tab01 tr:hover { /* 마우스오버 시 */
+	background-color: #0fc;
+	cursor: pointer; /* 커서 손가락 모양 */
+}
+
+#tab01 tr:nth-of-type(6)>td:nth-of-type(3) { 
+	/* => 6번째 tr의 3번째 td에만 적용 */
+	color: #f00;
+	font-weight: bold;
+}
+
+/* 2. table-layout: fixed; */
+#tab02 {
+	/* 표의 크기 처음부터 지정 */
+	width: 900px;
+	height: 600px;
+	/* table-layout: auto; */ /* 기본값 auto */
+	table-layout: fixed; /* 칸이 균등하게 */
+}
+
+#tab02 tr:nth-of-type(3) { /* 3행 전체 */
+	height: 80px;
+	color: #900;
+	vertical-align: top; 
+	/* => inline 정렬된 요소들을 위를 기준으로 정렬 */
+	/* => 표 안에서 셀의내용물을 수직으로 정렬 */
+}
+
+/* 3. border-spacing:n (Xn Yn); */
+/* 셀의 바깥 여백 조정(값이 두 개면 좌우가 먼저) */
+#tab03 {
+	border-spacing: 20px 10px;
+	/* => 셀 간의 간격(여백). 테두리 너비 조절 */
+	/* => 값 두 개 지정 시 좌우, 상하 순서 */
+	/* => c.f. margin, padding : 값 두 개 지정 시 상하, 좌우 순서 */
+}
+
+/* 4. border-collapse: collapse; */
+/* 셀들을 붙이기(이중테두리도 제거 됨) */
+#tab04 {
+	/* border-collapse: separate; */ /* 기본 값 */
+	border-collapse: collapse; 
+	/* 테두리 완전히 붙이지만 두께가 이중으로 두꺼워지지 않도록 함 */
+}
+
+#tab04 tr:nth-of-type(2n) {
+	background-color: #4cf;
+}
+
+#tab05 {
+	clear:both;
+}

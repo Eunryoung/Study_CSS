@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+/* 
+반응형은 모바일 퍼스트 원칙 
+- 작은 화면을 먼저 구성한 후 큰 화면 크기로 늘리는 건 쉽지만
+  큰 화면을 먼저 구성한 후 작은화면으로 줄이는 건 어려움
+*/
+
+/* 기본 설정을 모바일(작은 화면)이라고 가정 */
+body {
+	background-color: #48f;
+	color: #004;
+}
+
+h1 {
+	color: #ccf;
+}
+
+.clear { /* 내용 없는 빈 div 태그에 적용*/
+	clear: both;
+}
+
+
+/* 태블릿을 760px으로 가정(breakpoint) */ 
+@media screen and (min-width: 760px) { /* 표현식의 조건에는 세미콜론 넣으면 안 됨 */
+	body {
+		background-color: #4f8;
+		color: #040;
+	}
+
+	h1 {
+		color: #cfc;
+	}
+	
+	#dv01, #dv02 {
+		border: 1px solid #cfc;
+		float: left; /* 나란히 */
+		width: 45%; /* 너비 */
+		margin-left: 2%; /* 간격 */
+	}	
+}
+
+/* PC를 1000px으로 가정 */
+@media screen and (min-width: 1000px) {
+	body {
+		background-color: #f84;
+		color: #400;
+	}
+
+	h1 {
+		color: #fcc;
+	}	
+}
+/* => 웹페이지 크기를 늘였다 줄였다하면 화면이 바뀌는걸 알 수 있다! */
+
+
+
+/* 장치 유형을 print로 설정 */
+/* 크롬에서 Ctrl + P 누르면 인쇄 미리보기로 확인 가능*/
+@media print { /* @media only print */
+	body {
+		background-color: #fff;
+		color: #000;
+	}
+
+	h1 {
+		color: #000;
+	}	
+}
+
