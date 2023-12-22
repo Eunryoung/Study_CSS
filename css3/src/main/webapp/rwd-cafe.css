@@ -1,212 +1,179 @@
 @charset "UTF-8";
-/* mobile first */
+ /* mobile first */
+* {margin: 0; padding: 0;}
 
+html {scroll-behavior:smooth
+ /* 부드러운 스크롤이동 */;}
+ 
+body {font-family: ;}
+ 
+a {text-decoration: none;}  
+nav a:link, nav a:visited {
+	color: #fff;}  
+nav a:hover, nav a:active {
+	color: #ff0;} 
+ 
+h2 {font-size: 1.8em;}
+h3 {font-size: 1.3em;}
+p {font-size: 1.3em;
+ line-height: 2.5;}
+li {font-size: 1em;
+ line-height: 2;}
+ 
+#wrap {border: 1px solid red;
+margin: 0 auto;} 
 
-/* CSS 초기화 : 태그들이 기본 값을 가지고 있으므로 모든 값을 0으로 지정하는 작업 */
-* { /* 전체 요소에 margin, padding 속성의 값을 0으로 초기화 해 여백을 없애는게 기본 */
-	margin: 0;
-	padding: 0;
-}
+header {background-image: url("img/header.jpg");
+background-size:cover;
+background-position: center center;
+height: 300px;}
 
-body { /* body 태그 영역 */
-	font-family: ;
-	/* 작업 마무리 단계에서 서체 지정 */
-	
-}
+nav {background-color: #000;
+height: 50px;}
 
-a { /* a 태그의 밑줄 없애고 */
-	text-decoration: none;
-}
+nav ul {/*  */
+	list-style: none;
+	padding: 10px;}
 
-nav a:link, nav a:visited { /* 평상시 링크 : 초기링크(선택되지않은 파란색 링크) + 눌러진링크 둘 다 지정 */
-	color: #fff; /* 색상 흰색 지정 */
-}
+nav li {/*  */
+display: inline-block;
+margin:5px 15px;
+font-family: ;
+font-size: 0.8em; }
 
-nav a:hover, nav a:active { /* 마우스 오버 시와 활성화 시(누르고있을 때) 지정 */
-	color: #ff0; /* 색상 노란색 지정 */
-}
+section {/* border: 1px solid #0fa; */
+padding:15px 5% 10px 5%;
+position: relative;}
 
-/*
-반드시 평상시 링크가 존재해야 후버, 액티브도 동작하고,
-평상시 링크가 우선 지정 되어야 후버,액티브도 동작한다(지정 순서 바뀌면 X)
-*/
+section:nth-of-type(2n) {
+	background-color: #eee;}
 
-h2 { /* 값이 지정되어있는 hn 태그의 크기를 강제로 지정 */
-	font-size: 1.8em; /* 1.8배로 지정(em : 배수 단위)*/
-}
+.pg-title {
+position: absolute;
+top:20px; left: 0;
+padding: 30px 50px;}
 
-h3 { /* 값이 지정되어있는 hn 태그의 크기를 강제로 지정 */
-	font-size: 1.3em; /* 1.3배로 지정(em : 배수 단위)*/
-}
+.content {
+ width: 90%;
+ margin: 80px auto 10px;
+ padding: 20px;
+ box-sizing: border-box; }
 
-p { /* 문단 글자 크기, 행간(줄간격) 지정 */
-	font-size: 1.3em; /* 1.3배로 지정(em : 배수 단위)*/
-	line-height: 2.5; /* 행간(줄간격)을 2.5배로 지정(행간 목적일 경우 주로 단위 생략 -> 글자높이의 n배) */
-}
+.photo {display: none;}
 
-li { /* 목록의 글자 크기, 행간(줄간격) 지정 */
-	font-size: 1em; /* 1배로 지정(em : 배수 단위)*/
-	line-height: 2; /* 행간(줄간격)을 2배로 지정 */
-}
+.text>h3 {margin-bottom: 20px;
+color: #0094ff;}
 
-#wrap { /* 전체를 감싸는 영역 */
-	border: 1px solid red; /* 레이아웃 작업 시에는 테두리 넣어서 영역을 눈에 보이도록 해주는게 좋다 */
-	margin: 0 auto; /* 정가운데 있도록 할 때 margin: 0 auto; 지정 */
-	/* mobile 화면에서는 의미 없으나 후에 pc화면 크기로 바뀔 시 적용되므로 미리 지정 */
-}
+footer {background-color: #000;
+height: 100px;
+color: #fff;}
 
-header { /* header 태그 영역 */
-	/* 테두리 굳이 넣지않고 바로 이미지를 배경으로 지정 */
-	background-image: url("img/header.jpg");
-	/* 이미지가 보여지는 영역의 높이가 낮으므로 높이 지정 */
-	height: 300px; /* header의 높이 지정 -> 모바일은 보통 300px */ 	
-	background-size: cover;
-	/* 창을 늘였다 줄였다 할 때마다 영역에 맞춰서 그림 크기가 바뀌어서 그림 하나로 header를 채워야함 */
-	background-position: center center; /* background-position: 50% 50%; */
-	/* 창을 늘였다 줄였다 할 때마다 사진의 정중앙 부분을 기준으로 늘어나고 줄어듦
-	   기본값: 왼쪽 상단이 기준
-	 */
-}
-
-nav {
-	background-color: #000; /* 메뉴 영역 색상 검정색 지정 */
-	/* header 영역의 높이값에 맞춰 nav(메뉴) 영역의 높이도 고정 */
-	/* 높이값 강제 지정 */
-	height: 50px;
-	
-}
-
-nav li {
-	/* border: 1px solid #fa0; */ 
-	/* 작업 전 영역을 확인하기 위해 테두리 지정 */
-	
-	display: inline-block;
-	/* li 태그가 목록이라 글자가 세 줄로 나오므로 한 줄에 나란히 오도록 배치 */
-	/* float과의 차이점 : float은 공백 안 생기나 inline-block은 enter 하나 당 공백 하나로 친다 */
-	
-	font-size: 0.8em;
-	/* 메뉴에 있는 글자 크기가 다른 글자보다 작으므로 글자 크기 줄임 */
-	/* 글자크기부터 줄이고 작업을 해야 두 번 일을 안 한다 */
-	
-	margin: 5px 15px; 
-	/* 바깥 여백 지정 -> 2개 지정할 시 상하, 좌우 값으로 들어감 */
-	
-	font-family: ;
-	/* 작업 마무리 단계에서 서체 지정 */
-	
-}
-
-nav ul { /* li를 감싸는(= 상위요소인) ul */
-	
-	list-style: none; 
-	/* 목록의 검정 동그라미 없애기 -> CSS 초기화로 이미 사라졌으나 확실히 해두기위해 지정 */
-	
-	/* border: 1px solid #0fa; */ 
-	/* 작업 전 영역을 확인하기 위해 테두리 지정 */
-	
-	padding: 10px;
-	/* 안쪽 여백 지정 */ 
-}
-
-section { /* section 영역 세 개 */
-	border: 1px solid #0fa;
-	/* 작업 전 영역을 확인하기 위해 테두리 지정 */
-	position: relative; 
-	/* 제목 영역의 위치 지정의 기준점이 되는 상위요소이므로 position: relative 속성 지정 */
-}
-
-section:nth-of-type(2n) { /* 가운데(= 2번째) 섹션 */
-	background-color: #eee; /* 배경색 연회색 지정 */
-}
-
-.photo { /* 사진 영역 */
-	/* 공간이 없으므로 이미지를 사라지게 함 */
-
-	/* visibility: hidden; */
-	/* visibility: hidden 속성은 영역은 남기고 이미지만 보이지않게함 */
-	display: none;
-	/* display: none 속성은 영역 자체를 없앰 */
-} 
-
-.pg-title { /* 제목 영역 */
-	border: 1px solid #fa0;
-	/* 작업 전 영역을 확인하기 위해 테두리 지정 */
-	
-	position: absolute;
-	/* 상위요소 기준으로 자리를 지정 */
-	/* 기준점이 생기므로 바로 화면에 변화가 보임 */
-	/* 기준이 될 상위요소에 position: relative 속성을 지정해야한다 => 본 예제에서는 section이 기준 */
-	
-	top: 20px;
-	left: 0;
-	/* 위치 지정 */
-	
-	padding: 30px 50px;
-	/* 내부여백 상하, 좌우 지정 */
-	/* 패딩값 지정으로 제목 영역의 크기가 커짐 = 자리가 잡힘(테두리로 확인 가능) */
-}
-
-.content { /* 내용 영역 */
-	border: 1px solid #fa0;
-	/* 작업 전 영역을 확인하기 위해 테두리 지정 */
-	
-	/* 가로크기가 꽉차있으므로 내용이 나오는 영역을 꽉차지 않게 줄이고 시작 */
-	width: 90%; /* margin이 들어갈 영역 생성 */
-	
-	margin: 80px auto 10px;
-	/* 값 2개 줄 경우 (80px auto) 아래쪽 큰 여백이 생기므로 
-	   값 3개 줘서 아래쪽에 10px 지정해 아래쪽 큰 여백 없애고 자리잡음 */
-	
-	padding: 20px;
-	/* 처음에 90%로 줄여놓은 가로크기가 padding 값 지정으로 테두리에 사방으로 오버됨 */
-	
-	box-sizing: border-box;
-	/* 요소의 계산법을 테두리 박스까지 지정해 
-	테두리의 오버된 padding 값을 포함해 다시 지정한 크기까지 맞춰준다 */
-}
-
-.text>h3 { /* 텍스트 영역의 h3 태그 */
-
-	margin-bottom: 20px;
-	/* 제목 기준으로 자리를 잡아야함 => 현재 너무 가까우므로 띄우기 */
-	
-	color: #0094ff;
-	/* 글자색 변경 */
-}
-
-footer { /* footer 태그 영역 */
-
-	background-color: #000;
-	/* footer 영역 전체 배경색을 검정색으로 */
-	
-	height: 100px;
-	/* footer 영역의 높이값은 보통 고정값으로 정해져있음 */
-	
-	color: #fff;
-	/* footer 안의 모든 글자색 흰색 지정 */
-	
-}
-/* 글자 꾸며주고 글자색 하얗게, 가운데 정렬 */
-
-footer>p { /* footer 태그 영역 내의 p 태그 */
-	/* 글자가 수직, 수평 모두 정가운데 와야함 */
-	text-align: center; /* 수평정렬 가운데 */
-	line-height: 100px; /* 수직정렬 가운데 */
-	/* 원래 행간(줄간격)을 설정하는 목적일 경우 단위를 붙이지않지만 */
-	/* 수직 정렬 정가운데로 설정하는 목적인 경우 단위를 꼭 붙여준다 */
-	
-	font-size: 1.8em; 
-	/* 글자 크기 1.8배 */
-	
-	text-transform: capitalize; 
-	/* 영문의 첫글자를 대문자로 */
-	
-	font-family: ;
-	/* 작업 마무리 단계에서 서체 지정 */
+footer>p {text-align: center;
+line-height:100px; 	
+font-size: 1.8em;
+font-family: ;
+text-transform: capitalize;
 }
 
 
-/* tablet - 768px */
-@media screen and (min-width: 768px) { /* 최소 너비 768px로 지정 => 세미콜론 붙이면 X */
+
+   /* tablet - 768px */
+@media screen and (min-width:768px) {
+	
+ header {height: 400px;}	
+ 
+ #intro, #map {
+  border:1px dotted #ccc;
+  float: left;
+  width: 50%;  height:400px;
+  box-sizing: border-box
+ /* 요소의 크기 계산시 테두리까지 포함하기
+  (border나 padding이 추가되어도
+   실제 차지하는 영역이 늘어나지 않음) */;
+ }	
+ 
+.clear {clear: both; }
+
+/*  #choice {clear: both; }	 */
 	
 }
+
+ 
+  /* pc - 992px 이상 */
+@media screen and (min-width:992px) {
+	
+ #wrap {width: 995px;}
+ 
+ header {height: 500px;}	
+	
+ section {height: 420px !important;}	
+	
+ #intro, #map {width:100%; }	
+	
+	
+.photo {border: 1px solid #a0f;
+	display: block;
+	float: left;
+	width: 42%;
+	margin-right: 5%;}	
+
+.photo>img {width: 100%;
+ max-width:320px
+ /* 원본이미지보다 더 커지지 않게 설정 */;
+ height: auto;}
+	
+.text {border: 1px solid #0fa;
+	float: left;
+	width: 42%;}	
+	
+#choice	.photo, #choice	.text {
+	float: right; }
+	 
+#choice	.photo {margin-left: 5%;
+  border-radius: 50%; 
+  overflow: hidden; }	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
